@@ -7,8 +7,9 @@
 * 2. In Implicit binding of "this" applies to objects with methods. The left side 
 of the dot will point to object "this" is targetting.
 
-* 3. New Binding when a function is used with the new keyword it automatically tags the new object
-as the target of "this."
+* 3. New Binding: When New binding is used it creates a new object which inherits the constructor of the previous object.
+The 'this' will then target the new object made.
+
 
 * 4. Explicit key word uses specifically call, apply or bind to tell the function
  where this is targetting. Call immediately passes data to refer to
@@ -46,7 +47,14 @@ let restoOne = {
 restoOne.eat();
 // Principle 3
 // code example for New Binding
-//make example tomorrow too sleepy
+function Food(attrib) {
+	(this.newName = attrib.name), (this.newTaste = attrib.taste);
+	console.log(this);
+}
+const foodOne = new Food({
+	name: "orange",
+	taste: "sour"
+});
 // Principle 4
 // code example for Explicit Binding
 //example of using .call
