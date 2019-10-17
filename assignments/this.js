@@ -7,9 +7,8 @@
 * 2. In Implicit binding of "this" applies to objects with methods. The left side 
 of the dot will point to object "this" is targetting.
 
-* 3. New Binding when a function is used with the new keyword it tags the new object
-as the target of "this.""
-'this.'
+* 3. New Binding when a function is used with the new keyword it automatically tags the new object
+as the target of "this."
 
 * 4. Explicit key word uses specifically call, apply or bind to tell the function
  where this is targetting. Call immediately passes data to refer to
@@ -22,14 +21,15 @@ as the target of "this.""
 // Principle 1
 //the example below will give a console result of undefined
 // code example for Window Binding
-"use strict";
+//pls uncomment code to check individually
+// "use strict";
 
-function dog() {
-	console.log(this.sound);
-}
-var sound = "woof";
+// function dog() {
+// 	console.log(this.sound);
+// }
+// var sound = "woof";
 
-dog();
+// dog();
 
 // Principle 2
 // code example for Implicit Binding
@@ -46,7 +46,7 @@ let restoOne = {
 restoOne.eat();
 // Principle 3
 // code example for New Binding
-
+//make example tomorrow too sleepy
 // Principle 4
 // code example for Explicit Binding
 //example of using .call
@@ -63,9 +63,9 @@ dog.call(myDog);
 function resto() {
 	console.log(this.specialty);
 }
-let restoOne = {
-	name: "Brutus",
-	specialty: "burger"
+let restoThree = {
+	name: "Fushun",
+	specialty: "dimsum"
 };
-faveResto = resto.bind(restoOne);
+faveResto = resto.bind(restoThree);
 faveResto();
